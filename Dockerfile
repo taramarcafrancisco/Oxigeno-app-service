@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY . .
 
-RUN chmod +x mvnw && ./mvnw clean package -DskipTests
+RUN chmod +x mvnw && ./mvnw clean package -DskipTests && cp target/*.jar /app/app.jar
 
 EXPOSE 8080
 
-CMD ["java", "-jar", "target/oxigeno-app-service-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.jar"]
