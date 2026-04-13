@@ -6,13 +6,9 @@ COPY . .
 
 RUN chmod +x mvnw
 RUN ./mvnw clean package -DskipTests
-
-# DEBUG (clave para validar)
 RUN ls -l target
-
-# Copia segura del jar (sin wildcard directo)
-RUN cp $(ls target/*.jar | head -n 1) /app/app.jar
+RUN cp target/*.war /app/app.war
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "/app/app.jar"]
+ENTRYPOINT ["java", "-jar", "/app/app.war"]
