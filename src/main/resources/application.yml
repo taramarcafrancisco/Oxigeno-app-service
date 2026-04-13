@@ -1,5 +1,5 @@
 server:
-  port: 5388
+  port: ${PORT:8080}
 
 spring:
   main:
@@ -10,20 +10,21 @@ spring:
       enabled: false
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/oxigenobd
-    username: postgres
-    password: postgres
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/oxigenobd?sslmode=require}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
   jpa:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
-    show-sql: true
+    show-sql: ${SHOW_SQL:false}
     hibernate:
-      ddl-auto: update
+      ddl-auto: ${DDL_AUTO:update}
     properties:
       hibernate:
         jdbc:
           time_zone: UTC
+        format_sql: false
 
   mvc:
     hiddenmethod:
@@ -41,21 +42,11 @@ spring:
       max-request-size: 50MB
 
 logging:
-  file:
-    name: /var/lib/tomcat9/logs/oxigenowebservice.log
-  pattern:
-    console: "%d %-5level %logger : %msg%n"
-    file: "%d %-5level [%thread] %logger : %msg%n"
   level:
+    root: INFO
     org.springframework.web: INFO
     org.hibernate: ERROR
-    org.springframework.web.filter.CommonsRequestLoggingFilter: INFO
-    org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener: INFO
-    org.springframework.web.client.RestTemplate: INFO
-    org.apache.http: INFO
-    httpclient.wire: INFO
-
 
 jwt:
-  secret: ubidata_2026_super_secret_key_1234567890
-  expiration-ms: 86400000
+  secret: ${JWT_SECRET:ubidata_2026_super_secret_key_1234567890}
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000}

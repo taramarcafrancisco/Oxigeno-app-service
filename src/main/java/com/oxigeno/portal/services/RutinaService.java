@@ -15,4 +15,6 @@ public interface RutinaService {
     RutinaResponse obtenerRutinaActivaPorUsuario(Integer usuarioId);
 
     RutinaResponse obtenerRutinaActivaPorEmail(String email);
+
+	RutinaResponse obtenerRutinaCompletaPorEmail(String email);
 }

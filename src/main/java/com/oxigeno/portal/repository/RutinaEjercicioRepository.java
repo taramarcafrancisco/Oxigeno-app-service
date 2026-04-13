@@ -1,16 +1,14 @@
 package com.oxigeno.portal.repository;
 
-import com.oxigeno.portal.entity.Rutina;
+import com.oxigeno.portal.entity.RutinaEjercicio;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
-import java.util.Optional;
 
-public interface RutinaEjercicioRepository extends JpaRepository<Rutina, Integer> {
+@Repository
+public interface RutinaEjercicioRepository extends JpaRepository<RutinaEjercicio, Integer> {
 
-    List<Rutina> findByUsuario_IdUsuarioOrderByFechaAsignacionDesc(Integer idUsuario);
+	  List<RutinaEjercicio> findByRutina_IdRutinaOrderByOrdenAsc(Integer idRutina);
 
-    Optional<Rutina> findFirstByUsuario_IdUsuarioAndActivaTrueOrderByFechaAsignacionDesc(Integer idUsuario);
-
-    Optional<Rutina> findFirstByUsuario_EmailAndActivaTrueOrderByFechaAsignacionDesc(String email);
 }

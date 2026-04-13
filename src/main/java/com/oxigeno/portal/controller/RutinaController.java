@@ -2,7 +2,13 @@ package com.oxigeno.portal.controller;
 
 import com.oxigeno.portal.dto.RutinaRequest;
 import com.oxigeno.portal.dto.RutinaResponse;
+import com.oxigeno.portal.entity.Rutina;
+import com.oxigeno.portal.entity.RutinaEjercicio;
+import com.oxigeno.portal.repository.RutinaEjercicioRepository;
+import com.oxigeno.portal.repository.RutinaRepository;
 import com.oxigeno.portal.services.RutinaService;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.*;
 
@@ -14,6 +20,8 @@ import java.util.List;
 public class RutinaController {
 
     private final RutinaService rutinaService;
+	private RutinaRepository rutinaRepository;
+	private RutinaEjercicioRepository rutinaEjercicioRepository;
 
     public RutinaController(RutinaService rutinaService) {
         this.rutinaService = rutinaService;
@@ -42,10 +50,16 @@ public class RutinaController {
     }
 
     @GetMapping("/mia")
-    public RutinaResponse miRutina(Authentication authentication) {
+    public ResponseEntity<?> getMiRutina(Authentication authentication) {
+
         if (authentication == null || authentication.getName() == null) {
-            return null;
+            return ResponseEntity.status(401).body("Usuario no autenticado");
         }
-        return rutinaService.obtenerRutinaActivaPorEmail(authentication.getName());
+
+        String email = authentication.getName();
+
+        RutinaResponse rutina = rutinaService.obtenerRutinaCompletaPorEmail(email);
+
+        return ResponseEntity.ok(rutina);
     }
 }

@@ -13,4 +13,6 @@ public interface RutinaRepository extends JpaRepository<Rutina, Integer> {
     Optional<Rutina> findFirstByUsuario_IdUsuarioAndActivaTrueOrderByFechaAsignacionDesc(Integer idUsuario);
 
     Optional<Rutina> findFirstByUsuario_EmailAndActivaTrueOrderByFechaAsignacionDesc(String email);
+    
+    
 }
