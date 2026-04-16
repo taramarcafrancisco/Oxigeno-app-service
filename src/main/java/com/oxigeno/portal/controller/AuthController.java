@@ -16,9 +16,15 @@ import com.oxigeno.portal.security.JwtUtil;
  
 
  
+@CrossOrigin(
+    origins = {
+        "https://oxigeno-app-theta.vercel.app",
+        "http://localhost:5173"
+    },
+    allowCredentials = "true"
+)
 @RestController
 @RequestMapping("/api/auth")
-@CrossOrigin
 public class AuthController {
 
     private final UsuarioRepository usuarioRepository;
