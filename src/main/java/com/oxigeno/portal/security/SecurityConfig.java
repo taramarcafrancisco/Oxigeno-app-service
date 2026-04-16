@@ -1,25 +1,35 @@
 package com.oxigeno.portal.security;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
-
 import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
+import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
 public class SecurityConfig {
 
   private final JwtAuthFilter jwtAuthFilter;
+  private final List<String> allowedOriginPatterns;
 
-  public SecurityConfig(JwtAuthFilter jwtAuthFilter) {
+  public SecurityConfig(
+      JwtAuthFilter jwtAuthFilter,
+      @Value("${app.cors.allowed-origin-patterns:http://localhost:3000,http://localhost:5173,https://startb.com.ar,https://www.startb.com.ar,https://webservice.startb.com.ar,https://oxigeno-app-theta.vercel.app,https://*.vercel.app,https://*.netlify.app,https://*.pages.dev,https://*.dev}") String allowedOriginPatterns
+  ) {
     this.jwtAuthFilter = jwtAuthFilter;
+    this.allowedOriginPatterns = Arrays.stream(allowedOriginPatterns.split(","))
+        .map(String::trim)
+        .filter(pattern -> !pattern.isEmpty())
+        .collect(Collectors.toList());
   }
 
   @Bean
@@ -43,12 +53,7 @@ public class SecurityConfig {
 
       CorsConfiguration configuration = new CorsConfiguration();
 
-      configuration.setAllowedOrigins(Arrays.asList(
-          "http://localhost:5173",
-          "https://startb.com.ar",
-          "https://www.startb.com.ar",
-          "https://webservice.startb.com.ar"
-      ));
+      configuration.setAllowedOriginPatterns(allowedOriginPatterns);
 
       configuration.setAllowedMethods(Arrays.asList(
           "GET",
@@ -59,12 +64,8 @@ public class SecurityConfig {
           "OPTIONS"
       ));
 
-      configuration.setAllowedHeaders(Arrays.asList(
-          "Authorization",
-          "Content-Type",
-          "Accept",
-          "Origin"
-      ));
+      configuration.setAllowedHeaders(Arrays.asList("*"));
+      configuration.setExposedHeaders(Arrays.asList("Authorization"));
 
       configuration.setAllowCredentials(true);
 
