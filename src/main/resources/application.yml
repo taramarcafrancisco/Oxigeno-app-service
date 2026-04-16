@@ -52,9 +52,9 @@ logging:
     httpclient.wire: INFO
 
 jwt:
-  secret: ${JWT_SECRET}
+  secret: ${JWT_SECRET:test123456789}
   expiration-ms: ${JWT_EXPIRATION_MS:86400000}
 
 app:
   cors:
-    allowed-origin-patterns: ${APP_CORS_ALLOWED_ORIGIN_PATTERNS:http://localhost:5173,https://oxigeno-app-theta.vercel.app}
+    allowed-origin-patterns: ${APP_CORS_ALLOWED_ORIGIN_PATTERNS:http://localhost:5173,https://oxigeno-app-theta.vercel.app,https://*.vercel.app}

@@ -8,7 +8,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/planes")
-@CrossOrigin
 public class PlanController {
 
     private final PlanService planService;

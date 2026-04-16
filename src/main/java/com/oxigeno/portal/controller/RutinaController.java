@@ -16,7 +16,6 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/rutinas")
-@CrossOrigin
 public class RutinaController {
 
     private final RutinaService rutinaService;

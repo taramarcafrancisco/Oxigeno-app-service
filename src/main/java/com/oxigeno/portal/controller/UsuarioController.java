@@ -9,10 +9,9 @@
 	
 	import java.util.List;
 	
-	@RestController
-	@RequestMapping("/api/usuarios")
-	@CrossOrigin
-	public class UsuarioController {
+		@RestController
+		@RequestMapping("/api/usuarios")
+		public class UsuarioController {
 	
 		private final UsuarioService usuarioService;
 		private final UsuarioPlanService usuarioPlanService;
