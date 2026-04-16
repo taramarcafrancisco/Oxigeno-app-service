@@ -1,35 +1,22 @@
 package com.oxigeno.portal.security;
 
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
+import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-import org.springframework.web.cors.CorsConfiguration;
-import org.springframework.web.cors.CorsConfigurationSource;
-import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
 @Configuration
+@EnableGlobalMethodSecurity(prePostEnabled = true)
 public class SecurityConfig {
 
   private final JwtAuthFilter jwtAuthFilter;
-  private final List<String> allowedOriginPatterns;
 
-  public SecurityConfig(
-      JwtAuthFilter jwtAuthFilter,
-      @Value("${app.cors.allowed-origin-patterns:http://localhost:3000,http://localhost:5173,https://startb.com.ar,https://www.startb.com.ar,https://webservice.startb.com.ar,https://oxigeno-app-theta.vercel.app,https://*.vercel.app,https://*.netlify.app,https://*.pages.dev,https://*.dev}") String allowedOriginPatterns
-  ) {
+  public SecurityConfig(JwtAuthFilter jwtAuthFilter) {
     this.jwtAuthFilter = jwtAuthFilter;
-    this.allowedOriginPatterns = Arrays.stream(allowedOriginPatterns.split(","))
-        .map(String::trim)
-        .filter(pattern -> !pattern.isEmpty())
-        .collect(Collectors.toList());
   }
 
   @Bean
@@ -46,32 +33,5 @@ public class SecurityConfig {
 
     http.addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
     return http.build();
-  }
-
-  @Bean
-  public CorsConfigurationSource corsConfigurationSource() {
-
-      CorsConfiguration configuration = new CorsConfiguration();
-
-      configuration.setAllowedOriginPatterns(allowedOriginPatterns);
-
-      configuration.setAllowedMethods(Arrays.asList(
-          "GET",
-          "POST",
-          "PUT",
-          "DELETE",
-          "PATCH",
-          "OPTIONS"
-      ));
-
-      configuration.setAllowedHeaders(Arrays.asList("*"));
-      configuration.setExposedHeaders(Arrays.asList("Authorization"));
-
-      configuration.setAllowCredentials(true);
-
-      UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-      source.registerCorsConfiguration("/**", configuration);
-
-      return source;
   }
 }

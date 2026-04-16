@@ -10,9 +10,9 @@ spring:
       enabled: false
 
   datasource:
-    url: ${DB_URL}
-    username: ${DB_USER}
-    password: ${DB_PASSWORD}
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/oxigenobd}
+    username: ${DB_USER:postgres}
+    password: ${DB_PASSWORD:postgres}
     driver-class-name: org.postgresql.Driver
 
   jpa:
@@ -29,10 +29,6 @@ spring:
     hiddenmethod:
       filter:
         enabled: true
-
-  thymeleaf:
-    cache: false
-    suffix: .html
 
   servlet:
     multipart:
@@ -56,5 +52,9 @@ logging:
     httpclient.wire: INFO
 
 jwt:
-  secret: ${JWT_SECRET:ubidata_2026_super_secret_key_1234567890}
-  expiration-ms: 86400000
+  secret: ${JWT_SECRET}
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+
+app:
+  cors:
+    allowed-origin-patterns: ${APP_CORS_ALLOWED_ORIGIN_PATTERNS:http://localhost:5173,https://oxigeno-app-theta.vercel.app}
