@@ -36,25 +36,14 @@ spring:
       max-file-size: 50MB
       max-request-size: 50MB
 
-logging:
-  file:
-    name: /var/lib/tomcat9/logs/oxigenowebservice.log
-  pattern:
-    console: "%d %-5level %logger : %msg%n"
-    file: "%d %-5level [%thread] %logger : %msg%n"
-  level:
-    org.springframework.web: INFO
-    org.hibernate: ERROR
-    org.springframework.web.filter.CommonsRequestLoggingFilter: INFO
-    org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener: INFO
-    org.springframework.web.client.RestTemplate: INFO
-    org.apache.http: INFO
-    httpclient.wire: INFO
-
 jwt:
   secret: ${JWT_SECRET:test123456789}
+<<<<<<< HEAD
   expiration-ms: ${JWT_EXPIRATION_MS:86400000}
 
 app:
   cors:
     allowed-origin-patterns: ${APP_CORS_ALLOWED_ORIGIN_PATTERNS:http://localhost:5173,https://oxigeno-app-theta.vercel.app,https://*.vercel.app}
+=======
+  expiration-ms: ${JWT_EXPIRATION_MS:86400000}
+>>>>>>> b7f8d9a (Fix CORS credentials)

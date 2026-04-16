@@ -1,0 +1,1321 @@
+2026-04-16 11:14:32,821 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 20560 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 11:14:32,826 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 11:14:34,515 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 11:14:34,673 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144 ms. Found 6 JPA repository interfaces.
+2026-04-16 11:14:35,382 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=8a87ec22-c92e-3bb3-ba47-1377cf9cd3ae
+2026-04-16 11:14:36,992 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 11:14:37,007 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 11:14:37,008 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 11:14:37,185 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 11:14:37,185 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4252 ms
+2026-04-16 11:14:37,487 ERROR [main] org.springframework.boot.web.embedded.tomcat.TomcatStarter : Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'jwtAuthFilter' defined in file [C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes\com\oxigeno\portal\security\JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtUtil': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'jwt.secret' in value "${jwt.secret}"
+2026-04-16 11:14:37,531 INFO  [main] org.apache.catalina.core.StandardService : Stopping service [Tomcat]
+2026-04-16 11:14:37,545 WARN  [main] org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2026-04-16 11:14:37,569 INFO  [main] org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener : 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2026-04-16 11:14:37,595 ERROR [main] org.springframework.boot.SpringApplication : Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:163)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:577)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:740)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:415)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:303)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at com.oxigeno.portal.ServletInitializer.main(ServletInitializer.java:26)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:142)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:104)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:478)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:211)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:182)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:160)
+	... 8 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtAuthFilter' defined in file [C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes\com\oxigeno\portal\security\JwtAuthFilter.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtUtil': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'jwt.secret' in value "${jwt.secret}"
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:800)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:229)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1372)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1222)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:582)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:213)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:212)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:175)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAsRegistrationBean(ServletContextInitializerBeans.java:170)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addAdaptableBeans(ServletContextInitializerBeans.java:155)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:87)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:260)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:234)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5219)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:835)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1396)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1386)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:919)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:263)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:432)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:927)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:486)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:123)
+	... 13 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'jwtUtil': Injection of autowired dependencies failed; nested exception is java.lang.IllegalArgumentException: Could not resolve placeholder 'jwt.secret' in value "${jwt.secret}"
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:405)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.populateBean(AbstractAutowireCapableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:619)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:542)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:335)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:234)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:333)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:208)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:276)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1389)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:887)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:791)
+	... 54 common frames omitted
+Caused by: java.lang.IllegalArgumentException: Could not resolve placeholder 'jwt.secret' in value "${jwt.secret}"
+	at org.springframework.util.PropertyPlaceholderHelper.parseStringValue(PropertyPlaceholderHelper.java:180)
+	at org.springframework.util.PropertyPlaceholderHelper.replacePlaceholders(PropertyPlaceholderHelper.java:126)
+	at org.springframework.core.env.AbstractPropertyResolver.doResolvePlaceholders(AbstractPropertyResolver.java:239)
+	at org.springframework.core.env.AbstractPropertyResolver.resolveRequiredPlaceholders(AbstractPropertyResolver.java:210)
+	at org.springframework.context.support.PropertySourcesPlaceholderConfigurer.lambda$processProperties$0(PropertySourcesPlaceholderConfigurer.java:191)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.resolveEmbeddedValue(AbstractBeanFactory.java:936)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1330)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1309)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.resolveFieldValue(AutowiredAnnotationBeanPostProcessor.java:656)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor$AutowiredFieldElement.inject(AutowiredAnnotationBeanPostProcessor.java:639)
+	at org.springframework.beans.factory.annotation.InjectionMetadata.inject(InjectionMetadata.java:119)
+	at org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor.postProcessProperties(AutowiredAnnotationBeanPostProcessor.java:399)
+	... 66 common frames omitted
+2026-04-16 11:16:29,108 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 21332 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 11:16:29,112 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 11:16:30,237 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 11:16:30,329 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 82 ms. Found 6 JPA repository interfaces.
+2026-04-16 11:16:30,716 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=8a87ec22-c92e-3bb3-ba47-1377cf9cd3ae
+2026-04-16 11:16:32,047 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 11:16:32,062 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 11:16:32,062 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 11:16:32,229 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 11:16:32,230 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3058 ms
+2026-04-16 11:16:33,051 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 11:16:37,324 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 11:16:43,240 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 11:16:44,289 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 11:16:44,518 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 11:16:44,577 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 16.072 seconds (JVM running for 16.602)
+2026-04-16 11:18:30,720 INFO  [http-nio-5388-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-16 11:18:30,721 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2026-04-16 11:18:31,123 INFO  [http-nio-5388-exec-1] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-04-16 11:18:31,450 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 729 ms
+2026-04-16 11:18:31,705 INFO  [http-nio-5388-exec-1] org.springframework.security.web.DefaultSecurityFilterChain : Will not secure any request
+2026-04-16 11:21:39,578 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 7960 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 11:21:39,580 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 11:21:40,973 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 11:21:41,102 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 113 ms. Found 6 JPA repository interfaces.
+2026-04-16 11:21:41,852 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=8a87ec22-c92e-3bb3-ba47-1377cf9cd3ae
+2026-04-16 11:21:43,732 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 11:21:43,759 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 11:21:43,759 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 11:21:44,070 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 11:21:44,070 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4418 ms
+2026-04-16 11:21:45,148 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 11:21:48,264 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 11:21:54,323 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 11:21:55,675 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 11:21:55,894 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 11:21:56,035 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 17.142 seconds (JVM running for 17.688)
+2026-04-16 11:22:34,257 INFO  [http-nio-5388-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-16 11:22:34,257 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2026-04-16 11:22:34,548 INFO  [http-nio-5388-exec-1] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-04-16 11:22:34,831 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 574 ms
+2026-04-16 11:22:35,041 INFO  [http-nio-5388-exec-1] org.springframework.security.web.DefaultSecurityFilterChain : Will not secure any request
+2026-04-16 11:23:51,534 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 848 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 11:23:51,539 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 11:23:53,144 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 11:23:53,284 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 128 ms. Found 6 JPA repository interfaces.
+2026-04-16 11:23:53,917 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=8a87ec22-c92e-3bb3-ba47-1377cf9cd3ae
+2026-04-16 11:23:56,418 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 11:23:56,469 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 11:23:56,470 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 11:23:56,823 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 11:23:56,824 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5211 ms
+2026-04-16 11:23:57,950 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 11:24:00,914 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 11:24:07,161 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 11:24:08,588 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 11:24:08,902 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 11:24:08,976 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 18.207 seconds (JVM running for 18.786)
+2026-04-16 11:24:44,659 INFO  [http-nio-5388-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-16 11:24:44,659 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2026-04-16 11:24:44,956 INFO  [http-nio-5388-exec-1] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-04-16 11:24:45,223 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 564 ms
+2026-04-16 11:24:45,567 INFO  [http-nio-5388-exec-1] org.springframework.security.web.DefaultSecurityFilterChain : Will not secure any request
+2026-04-16 11:42:23,666 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 21968 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 11:42:23,670 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 11:42:25,881 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 11:42:26,065 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 169 ms. Found 6 JPA repository interfaces.
+2026-04-16 11:42:26,634 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=b8150733-f4b1-38f8-a0b0-75e362ed470a
+2026-04-16 11:42:29,178 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 11:42:29,267 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 11:42:29,268 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 11:42:29,551 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 11:42:29,551 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 5761 ms
+2026-04-16 11:42:31,194 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 11:42:35,749 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 11:42:42,620 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 11:42:46,357 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 11:42:47,145 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 11:42:47,429 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 24.696 seconds (JVM running for 25.565)
+2026-04-16 11:50:52,306 INFO  [http-nio-5388-exec-9] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-16 11:50:52,307 INFO  [http-nio-5388-exec-9] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2026-04-16 11:50:52,959 INFO  [http-nio-5388-exec-9] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-04-16 11:50:53,463 INFO  [http-nio-5388-exec-9] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 1156 ms
+2026-04-16 11:50:53,958 INFO  [http-nio-5388-exec-9] org.springframework.security.web.DefaultSecurityFilterChain : Will not secure any request
+2026-04-16 11:50:54,284 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 11:50:54,793 WARN  [http-nio-5388-exec-7] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@338bca16 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 11:50:54,801 WARN  [http-nio-5388-exec-7] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@70e60344 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 11:50:54,819 WARN  [http-nio-5388-exec-7] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1dd0bc34 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 11:50:54,821 WARN  [http-nio-5388-exec-7] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6016aab3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 11:50:54,824 WARN  [http-nio-5388-exec-7] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@666922e0 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 11:50:54,827 WARN  [http-nio-5388-exec-7] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2655f14a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 11:50:54,831 WARN  [http-nio-5388-exec-7] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3efcc8a8 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 11:50:54,837 WARN  [http-nio-5388-exec-7] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6beabef6 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 11:50:54,839 WARN  [http-nio-5388-exec-7] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@44bbef49 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 11:50:54,842 WARN  [http-nio-5388-exec-7] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4d6d9935 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 11:50:57,694 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 11:50:57,695 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNTEwNTcsImV4cCI6MTc3NjQzNzQ1N30.vZF347L5YgjQ-YbjS2Ai_fp0BRjAi7XM19vm5qnU1Bg","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":[]}}
+2026-04-16 11:53:48,657 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 15800 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 11:53:48,670 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 11:53:50,020 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 11:53:50,115 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 83 ms. Found 6 JPA repository interfaces.
+2026-04-16 11:53:50,442 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=b8150733-f4b1-38f8-a0b0-75e362ed470a
+2026-04-16 11:53:51,700 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 11:53:51,738 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 11:53:51,739 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 11:53:51,912 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 11:53:51,912 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3182 ms
+2026-04-16 11:53:52,712 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 11:53:55,625 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 11:54:01,430 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 11:54:02,622 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 11:54:02,814 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 11:54:02,870 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 14.847 seconds (JVM running for 15.467)
+2026-04-16 11:55:32,624 INFO  [http-nio-5388-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-16 11:55:32,624 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2026-04-16 11:55:32,907 INFO  [http-nio-5388-exec-1] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-04-16 11:55:33,184 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 560 ms
+2026-04-16 11:55:33,539 INFO  [http-nio-5388-exec-1] org.springframework.security.web.DefaultSecurityFilterChain : Will not secure any request
+2026-04-16 11:55:33,583 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 11:55:34,633 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 11:55:34,633 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNTEzMzQsImV4cCI6MTc3NjQzNzczNH0.Nj7aF-0H9qz6wbQqkI9AnRXC4WmpUU2RrUYI4znrNR4","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":[]}}
+2026-04-16 11:55:45,280 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 22216 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 11:55:45,285 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 11:55:46,610 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 11:55:46,740 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 6 JPA repository interfaces.
+2026-04-16 11:55:47,291 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=b8150733-f4b1-38f8-a0b0-75e362ed470a
+2026-04-16 11:55:48,705 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 11:55:48,723 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 11:55:48,724 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 11:55:48,918 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 11:55:48,919 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3560 ms
+2026-04-16 11:55:49,918 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 11:55:52,935 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 11:55:58,964 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 11:56:00,189 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 11:56:00,423 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 11:56:00,479 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 15.865 seconds (JVM running for 16.392)
+2026-04-16 11:56:22,169 INFO  [http-nio-5388-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-16 11:56:22,169 INFO  [http-nio-5388-exec-2] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2026-04-16 11:56:22,593 INFO  [http-nio-5388-exec-2] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-04-16 11:56:22,869 INFO  [http-nio-5388-exec-2] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 700 ms
+2026-04-16 11:56:23,127 INFO  [http-nio-5388-exec-2] org.springframework.security.web.DefaultSecurityFilterChain : Will not secure any request
+2026-04-16 11:56:23,192 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 11:56:24,237 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 11:56:24,238 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNTEzODMsImV4cCI6MTc3NjQzNzc4M30.z-zghpeIXCi3Y-4pcN6QVLy2SIaPIHYWQnHErxb9OAc","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":[]}}
+2026-04-16 11:57:16,723 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 11:57:17,302 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 11:57:17,302 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNTE0MzcsImV4cCI6MTc3NjQzNzgzN30.i4XmK1aIJx9yWvXu2x-MPU6zbyiyDgPt4oR3DKMRh-U","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":[]}}
+2026-04-16 12:03:16,660 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 9288 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 12:03:16,664 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 12:03:18,666 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 12:03:18,793 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 6 JPA repository interfaces.
+2026-04-16 12:03:19,447 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=b8150733-f4b1-38f8-a0b0-75e362ed470a
+2026-04-16 12:03:21,206 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 12:03:21,223 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 12:03:21,224 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 12:03:21,413 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 12:03:21,414 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4674 ms
+2026-04-16 12:03:22,624 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 12:03:26,083 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 12:03:32,384 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 12:03:34,033 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 12:03:34,293 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 12:03:34,471 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 18.591 seconds (JVM running for 19.346)
+2026-04-16 12:04:04,359 INFO  [http-nio-5388-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-16 12:04:04,360 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2026-04-16 12:04:04,843 INFO  [http-nio-5388-exec-1] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-04-16 12:04:05,499 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 1139 ms
+2026-04-16 12:04:05,985 INFO  [http-nio-5388-exec-1] org.springframework.security.web.DefaultSecurityFilterChain : Will not secure any request
+2026-04-16 12:04:06,082 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 12:04:07,535 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 12:04:07,535 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNTE4NDcsImV4cCI6MTc3NjQzODI0N30.11e_knjGf8idfFqbriRHpoxQgGCXh_jhbA0syYnCVu0","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":[]}}
+2026-04-16 12:05:51,367 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 18996 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 12:05:51,371 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 12:05:52,864 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 12:05:52,997 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 121 ms. Found 6 JPA repository interfaces.
+2026-04-16 12:05:53,487 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=b8150733-f4b1-38f8-a0b0-75e362ed470a
+2026-04-16 12:05:55,583 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 12:05:55,625 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 12:05:55,626 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 12:05:55,849 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 12:05:55,850 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4396 ms
+2026-04-16 12:05:57,210 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 12:06:00,212 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 12:06:06,907 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 12:06:08,712 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 12:06:09,061 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 12:06:09,148 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 18.724 seconds (JVM running for 19.479)
+2026-04-16 12:06:22,757 INFO  [http-nio-5388-exec-2] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-16 12:06:22,757 INFO  [http-nio-5388-exec-2] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2026-04-16 12:06:23,160 INFO  [http-nio-5388-exec-2] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-04-16 12:06:23,753 INFO  [http-nio-5388-exec-2] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 995 ms
+2026-04-16 12:06:24,090 INFO  [http-nio-5388-exec-2] org.springframework.security.web.DefaultSecurityFilterChain : Will not secure any request
+2026-04-16 12:06:24,185 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 12:06:25,520 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 12:06:25,521 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNTE5ODUsImV4cCI6MTc3NjQzODM4NX0.g5--mQvO2_u8xTqIyM-00IiZEwvf8S5nENJFyeReyT0","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 12:11:04,865 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 22476 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 12:11:04,870 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 12:11:06,274 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 12:11:06,376 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 6 JPA repository interfaces.
+2026-04-16 12:11:06,820 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=b8150733-f4b1-38f8-a0b0-75e362ed470a
+2026-04-16 12:11:08,261 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 12:11:08,275 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 12:11:08,275 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 12:11:08,458 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 12:11:08,462 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3524 ms
+2026-04-16 12:11:09,406 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 12:11:12,501 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 12:11:18,546 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 12:11:19,881 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 12:11:20,172 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 12:11:20,234 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 16.125 seconds (JVM running for 16.738)
+2026-04-16 12:14:43,193 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 11508 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 12:14:43,196 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 12:14:44,059 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 12:14:44,129 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 62 ms. Found 6 JPA repository interfaces.
+2026-04-16 12:14:44,384 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=b8150733-f4b1-38f8-a0b0-75e362ed470a
+2026-04-16 12:14:45,263 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 12:14:45,272 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 12:14:45,272 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 12:14:45,401 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 12:14:45,402 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2155 ms
+2026-04-16 12:14:45,971 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 12:14:48,740 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 12:14:54,440 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 12:14:55,322 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 12:14:55,524 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 12:14:55,573 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 12.872 seconds (JVM running for 13.268)
+2026-04-16 13:48:11,468 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 14524 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 13:48:11,490 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 13:48:12,655 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 13:48:12,789 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 122 ms. Found 6 JPA repository interfaces.
+2026-04-16 13:48:13,113 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=710fe7d2-422f-3118-bb5b-295c10568d43
+2026-04-16 13:48:14,256 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 13:48:14,270 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 13:48:14,271 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 13:48:14,435 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 13:48:14,435 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2840 ms
+2026-04-16 13:48:15,438 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 13:48:19,349 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 13:48:25,726 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 13:48:26,858 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 13:48:27,304 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 13:48:27,366 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 16.541 seconds (JVM running for 17.209)
+2026-04-16 14:33:47,900 INFO  [http-nio-5388-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-16 14:33:47,900 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2026-04-16 14:33:48,233 INFO  [http-nio-5388-exec-1] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-04-16 14:33:48,493 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 592 ms
+2026-04-16 14:33:48,756 INFO  [http-nio-5388-exec-1] org.springframework.security.web.DefaultSecurityFilterChain : Will not secure any request
+2026-04-16 14:33:48,928 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 14:33:49,204 WARN  [http-nio-5388-exec-2] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@25738e33 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:33:49,206 WARN  [http-nio-5388-exec-2] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4a5ef7b9 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:33:49,208 WARN  [http-nio-5388-exec-2] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2c19a132 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:33:49,209 WARN  [http-nio-5388-exec-2] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@15a2a094 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:33:49,211 WARN  [http-nio-5388-exec-2] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6dae6b4e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:33:49,211 WARN  [http-nio-5388-exec-2] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@50f0ba7d (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:33:49,212 WARN  [http-nio-5388-exec-2] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@31818160 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:33:49,213 WARN  [http-nio-5388-exec-2] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@312731c4 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:33:49,217 WARN  [http-nio-5388-exec-2] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2fcdc8b5 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:33:49,219 WARN  [http-nio-5388-exec-2] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7abbac63 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:33:52,912 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 14:33:52,913 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNjA4MzIsImV4cCI6MTc3NjQ0NzIzMn0.N_W8HILP6VzCgXsyboxKtqHe84zMQcLN1izQmYkOOtI","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 14:45:46,897 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 14:45:46,912 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1799a2a3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:45:46,919 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1d61c9d3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:45:46,921 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5863441b (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:45:46,924 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@2b5790e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:45:46,926 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@69711836 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:45:46,929 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7a4d7b9a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:45:46,930 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@384cbb54 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:45:46,933 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@1198d85a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:45:46,935 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7049c2f7 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:45:46,937 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6149f6cf (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 14:45:50,260 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 14:45:50,260 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNjE1NTAsImV4cCI6MTc3NjQ0Nzk1MH0.BnVJqwisrvvFfj2bYUwopErNDeg0c6l1WX9Tfq0pMt0","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 14:48:46,204 INFO  [http-nio-5388-exec-10] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 14:48:46,807 INFO  [http-nio-5388-exec-10] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 14:48:46,808 INFO  [http-nio-5388-exec-10] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNjE3MjYsImV4cCI6MTc3NjQ0ODEyNn0.QnWUcLPXzCquvxbEj1m3NEpTj7vC1H3S_8bJ_02-gkA","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 14:48:49,581 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 14:48:50,145 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 14:48:50,146 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNjE3MzAsImV4cCI6MTc3NjQ0ODEzMH0.YsS8v9ZkbKJJ07FWWqzaWNpYyS-meThKTc0xVizPv_A","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 14:52:24,252 INFO  [main] com.oxigeno.portal.ServletInitializer : Starting ServletInitializer using Java 1.8.0_261 on FRANPC with PID 17140 (C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE\target\classes started by Usuario in C:\Users\Usuario\Documents\GitHub\Oxigeno-app-service\OXIGENO-APP-SERVICE)
+2026-04-16 14:52:24,260 INFO  [main] com.oxigeno.portal.ServletInitializer : No active profile set, falling back to 1 default profile: "default"
+2026-04-16 14:52:25,897 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-04-16 14:52:26,006 INFO  [main] org.springframework.data.repository.config.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 97 ms. Found 6 JPA repository interfaces.
+2026-04-16 14:52:26,432 INFO  [main] org.springframework.cloud.context.scope.GenericScope : BeanFactory id=710fe7d2-422f-3118-bb5b-295c10568d43
+2026-04-16 14:52:27,747 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat initialized with port(s): 5388 (http)
+2026-04-16 14:52:27,758 INFO  [main] org.apache.catalina.core.StandardService : Starting service [Tomcat]
+2026-04-16 14:52:27,758 INFO  [main] org.apache.catalina.core.StandardEngine : Starting Servlet engine: [Apache Tomcat/9.0.58]
+2026-04-16 14:52:27,950 INFO  [main] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring embedded WebApplicationContext
+2026-04-16 14:52:27,951 INFO  [main] org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3622 ms
+2026-04-16 14:52:28,837 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Starting...
+2026-04-16 14:52:32,047 INFO  [main] com.zaxxer.hikari.HikariDataSource : HikariPool-1 - Start completed.
+2026-04-16 14:52:38,191 INFO  [main] org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-04-16 14:52:39,319 INFO  [main] org.springframework.boot.web.embedded.tomcat.TomcatWebServer : Tomcat started on port(s): 5388 (http) with context path ''
+2026-04-16 14:52:39,585 WARN  [main] org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2026-04-16 14:52:39,649 INFO  [main] com.oxigeno.portal.ServletInitializer : Started ServletInitializer in 16.014 seconds (JVM running for 16.662)
+2026-04-16 14:53:09,691 INFO  [http-nio-5388-exec-1] org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-04-16 14:53:09,691 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Initializing Servlet 'dispatcherServlet'
+2026-04-16 14:53:10,256 INFO  [http-nio-5388-exec-1] org.springframework.boot.actuate.endpoint.web.EndpointLinksResolver : Exposing 1 endpoint(s) beneath base path '/actuator'
+2026-04-16 14:53:10,663 INFO  [http-nio-5388-exec-1] org.springframework.web.servlet.DispatcherServlet : Completed initialization in 971 ms
+2026-04-16 14:53:11,057 INFO  [http-nio-5388-exec-1] org.springframework.security.web.DefaultSecurityFilterChain : Will not secure any request
+2026-04-16 14:53:12,614 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/auth/me desde 0:0:0:0:0:0:0:1
+2026-04-16 14:53:13,248 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"],"nombre":"Lucas","apellido":"RANOCCHIA","telefono":null,"planes":[]}
+2026-04-16 14:53:14,085 INFO  [http-nio-5388-exec-5] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 14:53:14,671 INFO  [http-nio-5388-exec-5] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 14:53:14,671 INFO  [http-nio-5388-exec-5] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNjE5OTQsImV4cCI6MTc3NjQ0ODM5NH0.2eMms_qbRzXaqOBwpuSpGK2XxZcz7f05bfsgP7pnWhg","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 14:53:15,151 INFO  [http-nio-5388-exec-8] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/auth/me desde 0:0:0:0:0:0:0:1
+2026-04-16 14:53:15,661 INFO  [http-nio-5388-exec-8] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"],"nombre":"Lucas","apellido":"RANOCCHIA","telefono":null,"planes":[]}
+2026-04-16 14:53:16,551 INFO  [http-nio-5388-exec-9] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/usuarios desde 0:0:0:0:0:0:0:1
+2026-04-16 14:53:16,621 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/planes desde 0:0:0:0:0:0:0:1
+2026-04-16 14:53:16,627 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 14:53:17,029 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: []
+2026-04-16 14:53:17,096 ERROR [http-nio-5388-exec-1] com.oxigeno.portal.exceptions.GlobalExceptionHandler : No se encontró rutina activa
+java.lang.RuntimeException: No se encontró rutina activa
+	at com.oxigeno.portal.services.RutinaServiceImpl.lambda$7(RutinaServiceImpl.java:187)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at com.oxigeno.portal.services.RutinaServiceImpl.obtenerRutinaCompletaPorEmail(RutinaServiceImpl.java:187)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$FastClassBySpringCGLIB$$64818340.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$EnhancerBySpringCGLIB$$b53a4be.obtenerRutinaCompletaPorEmail(<generated>)
+	at com.oxigeno.portal.controller.RutinaController.getMiRutina(RutinaController.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.oxigeno.portal.filter.LoggingFilter.doFilterInternal(LoggingFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.oxigeno.portal.security.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:71)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.cloud.sleuth.instrument.web.servlet.TracingFilter.doFilter(TracingFilter.java:68)
+	at org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration$LazyTracingFilter.doFilter(TraceWebServletConfiguration.java:131)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.springframework.cloud.sleuth.instrument.web.tomcat.TraceValve.invoke(TraceValve.java:90)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2026-04-16 14:53:17,099 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 500 Body: Ocurrió un error: No se encontró rutina activa
+2026-04-16 14:53:17,390 INFO  [http-nio-5388-exec-9] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: [{"idUsuario":1,"nombre":"Lucas","apellido":"RANOCCHIA","razonSocial":null,"cuit":"321551","email":"taramarcafrancisco@gmail.com","direccion":null,"tel":null,"password":"1234","estado":1,"roles":[{"idRol":1,"nombre":"ADMIN"}],"planes":[]}]
+2026-04-16 14:53:18,789 INFO  [http-nio-5388-exec-3] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 14:53:19,136 ERROR [http-nio-5388-exec-3] com.oxigeno.portal.exceptions.GlobalExceptionHandler : No se encontró rutina activa
+java.lang.RuntimeException: No se encontró rutina activa
+	at com.oxigeno.portal.services.RutinaServiceImpl.lambda$7(RutinaServiceImpl.java:187)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at com.oxigeno.portal.services.RutinaServiceImpl.obtenerRutinaCompletaPorEmail(RutinaServiceImpl.java:187)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$FastClassBySpringCGLIB$$64818340.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$EnhancerBySpringCGLIB$$b53a4be.obtenerRutinaCompletaPorEmail(<generated>)
+	at com.oxigeno.portal.controller.RutinaController.getMiRutina(RutinaController.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.oxigeno.portal.filter.LoggingFilter.doFilterInternal(LoggingFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.oxigeno.portal.security.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:71)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.cloud.sleuth.instrument.web.servlet.TracingFilter.doFilter(TracingFilter.java:68)
+	at org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration$LazyTracingFilter.doFilter(TraceWebServletConfiguration.java:131)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.springframework.cloud.sleuth.instrument.web.tomcat.TraceValve.invoke(TraceValve.java:90)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2026-04-16 14:53:19,151 INFO  [http-nio-5388-exec-3] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 500 Body: Ocurrió un error: No se encontró rutina activa
+2026-04-16 15:04:14,289 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 15:04:14,302 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@416c4d3 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:04:14,304 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@3cd2fe5a (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:04:14,306 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@ed0954f (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:04:14,312 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@277207b9 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:04:14,323 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@4d78a479 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:04:14,328 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@66f3b3a2 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:04:14,333 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@6c0328de (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:04:14,337 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@5b7bb528 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:04:14,341 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@53289952 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:04:14,347 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@28bd4e36 (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:04:17,519 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 15:04:17,519 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNjI2NTcsImV4cCI6MTc3NjQ0OTA1N30.QPl-w8JdfZRWfsemapuq3uIqaF0rllWt3Zt_6W_lOjs","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 15:06:37,860 INFO  [http-nio-5388-exec-3] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 15:06:38,393 INFO  [http-nio-5388-exec-3] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 15:06:38,393 INFO  [http-nio-5388-exec-3] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNjI3OTgsImV4cCI6MTc3NjQ0OTE5OH0.iFDgnXGWETLFDTVYHDzzCE_5NGGUv96LqQymTvWcmdU","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 15:06:38,975 INFO  [http-nio-5388-exec-8] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/auth/me desde 0:0:0:0:0:0:0:1
+2026-04-16 15:06:39,489 INFO  [http-nio-5388-exec-8] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"],"nombre":"Lucas","apellido":"RANOCCHIA","telefono":null,"planes":[]}
+2026-04-16 15:06:40,082 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 15:06:40,305 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/planes desde 0:0:0:0:0:0:0:1
+2026-04-16 15:06:40,335 INFO  [http-nio-5388-exec-9] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/usuarios desde 0:0:0:0:0:0:0:1
+2026-04-16 15:06:40,430 ERROR [http-nio-5388-exec-2] com.oxigeno.portal.exceptions.GlobalExceptionHandler : No se encontró rutina activa
+java.lang.RuntimeException: No se encontró rutina activa
+	at com.oxigeno.portal.services.RutinaServiceImpl.lambda$7(RutinaServiceImpl.java:187)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at com.oxigeno.portal.services.RutinaServiceImpl.obtenerRutinaCompletaPorEmail(RutinaServiceImpl.java:187)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$FastClassBySpringCGLIB$$64818340.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$EnhancerBySpringCGLIB$$b53a4be.obtenerRutinaCompletaPorEmail(<generated>)
+	at com.oxigeno.portal.controller.RutinaController.getMiRutina(RutinaController.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.oxigeno.portal.filter.LoggingFilter.doFilterInternal(LoggingFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.oxigeno.portal.security.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:71)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.cloud.sleuth.instrument.web.servlet.TracingFilter.doFilter(TracingFilter.java:68)
+	at org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration$LazyTracingFilter.doFilter(TraceWebServletConfiguration.java:131)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.springframework.cloud.sleuth.instrument.web.tomcat.TraceValve.invoke(TraceValve.java:90)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2026-04-16 15:06:40,432 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 500 Body: Ocurrió un error: No se encontró rutina activa
+2026-04-16 15:06:40,654 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: []
+2026-04-16 15:06:41,069 INFO  [http-nio-5388-exec-9] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: [{"idUsuario":1,"nombre":"Lucas","apellido":"RANOCCHIA","razonSocial":null,"cuit":"321551","email":"taramarcafrancisco@gmail.com","direccion":null,"tel":null,"password":"1234","estado":1,"roles":[{"idRol":1,"nombre":"ADMIN"}],"planes":[]}]
+2026-04-16 15:06:42,072 INFO  [http-nio-5388-exec-3] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 15:06:42,415 ERROR [http-nio-5388-exec-3] com.oxigeno.portal.exceptions.GlobalExceptionHandler : No se encontró rutina activa
+java.lang.RuntimeException: No se encontró rutina activa
+	at com.oxigeno.portal.services.RutinaServiceImpl.lambda$7(RutinaServiceImpl.java:187)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at com.oxigeno.portal.services.RutinaServiceImpl.obtenerRutinaCompletaPorEmail(RutinaServiceImpl.java:187)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$FastClassBySpringCGLIB$$64818340.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$EnhancerBySpringCGLIB$$b53a4be.obtenerRutinaCompletaPorEmail(<generated>)
+	at com.oxigeno.portal.controller.RutinaController.getMiRutina(RutinaController.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.oxigeno.portal.filter.LoggingFilter.doFilterInternal(LoggingFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.oxigeno.portal.security.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:71)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.cloud.sleuth.instrument.web.servlet.TracingFilter.doFilter(TracingFilter.java:68)
+	at org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration$LazyTracingFilter.doFilter(TraceWebServletConfiguration.java:131)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.springframework.cloud.sleuth.instrument.web.tomcat.TraceValve.invoke(TraceValve.java:90)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2026-04-16 15:06:42,416 INFO  [http-nio-5388-exec-3] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 500 Body: Ocurrió un error: No se encontró rutina activa
+2026-04-16 15:14:11,834 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 15:14:16,841 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@73d5e3bc (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:14:21,842 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@490f608c (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:14:26,843 WARN  [http-nio-5388-exec-6] com.zaxxer.hikari.pool.PoolBase : HikariPool-1 - Failed to validate connection org.postgresql.jdbc.PgConnection@7bdb040e (This connection has been closed.). Possibly consider using a shorter maxLifetime value.
+2026-04-16 15:14:27,379 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"taramarcafrancisco@gmail.com","password":"1234"}
+2026-04-16 15:14:27,379 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0YXJhbWFyY2FmcmFuY2lzY29AZ21haWwuY29tIiwidXNlcklkIjoxLCJpYXQiOjE3NzYzNjMyNjcsImV4cCI6MTc3NjQ0OTY2N30.yJ3leBfrOxDOzXQqGyRDaV5oNvDaYqpWn0hJvx-dp9o","user":{"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 15:14:28,008 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/auth/me desde 0:0:0:0:0:0:0:1
+2026-04-16 15:14:28,554 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"],"nombre":"Lucas","apellido":"RANOCCHIA","telefono":null,"planes":[]}
+2026-04-16 15:14:29,404 INFO  [http-nio-5388-exec-5] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/usuarios desde 0:0:0:0:0:0:0:1
+2026-04-16 15:14:29,471 INFO  [http-nio-5388-exec-10] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 15:14:29,513 INFO  [http-nio-5388-exec-4] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/planes desde 0:0:0:0:0:0:0:1
+2026-04-16 15:14:29,812 ERROR [http-nio-5388-exec-10] com.oxigeno.portal.exceptions.GlobalExceptionHandler : No se encontró rutina activa
+java.lang.RuntimeException: No se encontró rutina activa
+	at com.oxigeno.portal.services.RutinaServiceImpl.lambda$7(RutinaServiceImpl.java:187)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at com.oxigeno.portal.services.RutinaServiceImpl.obtenerRutinaCompletaPorEmail(RutinaServiceImpl.java:187)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$FastClassBySpringCGLIB$$64818340.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$EnhancerBySpringCGLIB$$b53a4be.obtenerRutinaCompletaPorEmail(<generated>)
+	at com.oxigeno.portal.controller.RutinaController.getMiRutina(RutinaController.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.oxigeno.portal.filter.LoggingFilter.doFilterInternal(LoggingFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.oxigeno.portal.security.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:71)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.cloud.sleuth.instrument.web.servlet.TracingFilter.doFilter(TracingFilter.java:68)
+	at org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration$LazyTracingFilter.doFilter(TraceWebServletConfiguration.java:131)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.springframework.cloud.sleuth.instrument.web.tomcat.TraceValve.invoke(TraceValve.java:90)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2026-04-16 15:14:29,814 INFO  [http-nio-5388-exec-10] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 500 Body: Ocurrió un error: No se encontró rutina activa
+2026-04-16 15:14:29,882 INFO  [http-nio-5388-exec-4] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: []
+2026-04-16 15:14:30,088 INFO  [http-nio-5388-exec-5] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: [{"idUsuario":1,"nombre":"Lucas","apellido":"RANOCCHIA","razonSocial":null,"cuit":"321551","email":"taramarcafrancisco@gmail.com","direccion":null,"tel":null,"password":"1234","estado":1,"roles":[{"idRol":1,"nombre":"ADMIN"}],"planes":[]}]
+2026-04-16 15:14:41,007 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 15:14:41,349 ERROR [http-nio-5388-exec-7] com.oxigeno.portal.exceptions.GlobalExceptionHandler : No se encontró rutina activa
+java.lang.RuntimeException: No se encontró rutina activa
+	at com.oxigeno.portal.services.RutinaServiceImpl.lambda$7(RutinaServiceImpl.java:187)
+	at java.util.Optional.orElseThrow(Optional.java:290)
+	at com.oxigeno.portal.services.RutinaServiceImpl.obtenerRutinaCompletaPorEmail(RutinaServiceImpl.java:187)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$FastClassBySpringCGLIB$$64818340.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:783)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:123)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:388)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:753)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:698)
+	at com.oxigeno.portal.services.RutinaServiceImpl$$EnhancerBySpringCGLIB$$b53a4be.obtenerRutinaCompletaPorEmail(<generated>)
+	at com.oxigeno.portal.controller.RutinaController.getMiRutina(RutinaController.java:61)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:205)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:150)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.AbstractRequestLoggingFilter.doFilterInternal(AbstractRequestLoggingFilter.java:289)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:111)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at com.oxigeno.portal.filter.LoggingFilter.doFilterInternal(LoggingFilter.java:42)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:327)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.invoke(FilterSecurityInterceptor.java:115)
+	at org.springframework.security.web.access.intercept.FilterSecurityInterceptor.doFilter(FilterSecurityInterceptor.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:122)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:126)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:81)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:109)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:149)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at com.oxigeno.portal.security.JwtAuthFilter.doFilterInternal(JwtAuthFilter.java:71)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:354)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:267)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:94)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.cloud.sleuth.instrument.web.servlet.TracingFilter.doFilter(TracingFilter.java:68)
+	at org.springframework.cloud.sleuth.autoconfig.instrument.web.TraceWebServletConfiguration$LazyTracingFilter.doFilter(TraceWebServletConfiguration.java:131)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:117)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.springframework.cloud.sleuth.instrument.web.tomcat.TraceValve.invoke(TraceValve.java:90)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:359)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:399)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:889)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1735)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2026-04-16 15:14:41,351 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 500 Body: Ocurrió un error: No se encontró rutina activa
+2026-04-16 15:19:54,951 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/auth/me desde 0:0:0:0:0:0:0:1
+2026-04-16 15:19:55,020 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/usuarios desde 0:0:0:0:0:0:0:1
+2026-04-16 15:19:55,025 INFO  [http-nio-5388-exec-9] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/planes desde 0:0:0:0:0:0:0:1
+2026-04-16 15:19:55,055 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 15:19:55,362 INFO  [http-nio-5388-exec-9] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: []
+2026-04-16 15:19:55,459 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"id":1,"email":"taramarcafrancisco@gmail.com","estado":1,"roles":["ADMIN"],"nombre":"Lucas","apellido":"RANOCCHIA","telefono":null,"planes":[]}
+2026-04-16 15:19:55,637 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"idRutina":6,"nombre":"Rutina Fuerza Tren Superior","objetivo":"Mejorar fuerza y resistencia","nivel":"Intermedio","dias":"Lunes, MiÃ©rcoles y Viernes","observaciones":null,"fechaAsignacion":"2026-04-10","activa":true,"idUsuario":1,"ejercicios":[]}
+2026-04-16 15:19:55,701 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: [{"idUsuario":1,"nombre":"Lucas","apellido":"RANOCCHIA","razonSocial":null,"cuit":"321551","email":"taramarcafrancisco@gmail.com","direccion":null,"tel":null,"password":"1234","estado":1,"roles":[{"idRol":1,"nombre":"ADMIN"}],"planes":[]}]
+2026-04-16 15:20:40,255 INFO  [http-nio-5388-exec-4] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 15:20:40,819 INFO  [http-nio-5388-exec-4] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"oxigeno@gmail.com","password":"1234"}
+2026-04-16 15:20:40,819 INFO  [http-nio-5388-exec-4] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJveGlnZW5vQGdtYWlsLmNvbSIsInVzZXJJZCI6MSwiaWF0IjoxNzc2MzYzNjQwLCJleHAiOjE3NzY0NTAwNDB9.Eqvd60cm3dICiyqhdyMti9bv3-4jeeZQVwiARRZSufk","user":{"id":1,"email":"oxigeno@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 15:20:41,592 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/auth/me desde 0:0:0:0:0:0:0:1
+2026-04-16 15:20:42,100 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"id":1,"email":"oxigeno@gmail.com","estado":1,"roles":["ADMIN"],"nombre":"Lucas","apellido":"RANOCCHIA","telefono":null,"planes":[]}
+2026-04-16 15:20:42,717 INFO  [http-nio-5388-exec-3] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/usuarios desde 0:0:0:0:0:0:0:1
+2026-04-16 15:20:42,944 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 15:20:43,396 INFO  [http-nio-5388-exec-3] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: [{"idUsuario":1,"nombre":"Lucas","apellido":"RANOCCHIA","razonSocial":null,"cuit":"321551","email":"oxigeno@gmail.com","direccion":null,"tel":null,"password":"1234","estado":1,"roles":[{"idRol":1,"nombre":"ADMIN"}],"planes":[]}]
+2026-04-16 15:20:43,496 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"idRutina":6,"nombre":"Rutina Fuerza Tren Superior","objetivo":"Mejorar fuerza y resistencia","nivel":"Intermedio","dias":"Lunes, MiÃ©rcoles y Viernes","observaciones":null,"fechaAsignacion":"2026-04-10","activa":true,"idUsuario":1,"ejercicios":[]}
+2026-04-16 15:20:56,877 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/planes desde 0:0:0:0:0:0:0:1
+2026-04-16 15:20:56,912 INFO  [http-nio-5388-exec-4] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/auth/me desde 0:0:0:0:0:0:0:1
+2026-04-16 15:20:56,941 INFO  [http-nio-5388-exec-9] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 15:20:57,215 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: []
+2026-04-16 15:20:57,455 INFO  [http-nio-5388-exec-9] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"idRutina":6,"nombre":"Rutina Fuerza Tren Superior","objetivo":"Mejorar fuerza y resistencia","nivel":"Intermedio","dias":"Lunes, MiÃ©rcoles y Viernes","observaciones":null,"fechaAsignacion":"2026-04-10","activa":true,"idUsuario":1,"ejercicios":[]}
+2026-04-16 15:20:57,457 INFO  [http-nio-5388-exec-4] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"id":1,"email":"oxigeno@gmail.com","estado":1,"roles":["ADMIN"],"nombre":"Lucas","apellido":"RANOCCHIA","telefono":null,"planes":[]}
+2026-04-16 15:21:03,715 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 15:21:04,268 INFO  [http-nio-5388-exec-2] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"idRutina":6,"nombre":"Rutina Fuerza Tren Superior","objetivo":"Mejorar fuerza y resistencia","nivel":"Intermedio","dias":"Lunes, MiÃ©rcoles y Viernes","observaciones":null,"fechaAsignacion":"2026-04-10","activa":true,"idUsuario":1,"ejercicios":[]}
+2026-04-16 15:23:14,426 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 15:23:14,953 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"oxigeno@gmail.com","password":"1234"}
+2026-04-16 15:23:14,954 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJveGlnZW5vQGdtYWlsLmNvbSIsInVzZXJJZCI6MSwiaWF0IjoxNzc2MzYzNzk0LCJleHAiOjE3NzY0NTAxOTR9.O3_D78vGZRbV_7wtajpqBJY_LwsldArbRgEXlk1Zhjk","user":{"id":1,"email":"oxigeno@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 15:24:02,956 INFO  [http-nio-5388-exec-5] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 15:24:03,476 INFO  [http-nio-5388-exec-5] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"oxigeno@gmail.com","password":"1234"}
+2026-04-16 15:24:03,476 INFO  [http-nio-5388-exec-5] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJveGlnZW5vQGdtYWlsLmNvbSIsInVzZXJJZCI6MSwiaWF0IjoxNzc2MzYzODQzLCJleHAiOjE3NzY0NTAyNDN9.sW_BNAJvNXjt6wubNS7HMLcWCemJuGopiHPj4xrhYFI","user":{"id":1,"email":"oxigeno@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 15:24:04,234 INFO  [http-nio-5388-exec-9] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/auth/me desde 0:0:0:0:0:0:0:1
+2026-04-16 15:24:04,751 INFO  [http-nio-5388-exec-9] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"id":1,"email":"oxigeno@gmail.com","estado":1,"roles":["ADMIN"],"nombre":"Lucas","apellido":"RANOCCHIA","telefono":null,"planes":[]}
+2026-04-16 15:24:05,593 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/usuarios desde 0:0:0:0:0:0:0:1
+2026-04-16 15:24:05,610 INFO  [http-nio-5388-exec-8] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 15:24:06,150 INFO  [http-nio-5388-exec-8] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"idRutina":6,"nombre":"Rutina Fuerza Tren Superior","objetivo":"Mejorar fuerza y resistencia","nivel":"Intermedio","dias":"Lunes, MiÃ©rcoles y Viernes","observaciones":null,"fechaAsignacion":"2026-04-10","activa":true,"idUsuario":1,"ejercicios":[]}
+2026-04-16 15:24:06,273 INFO  [http-nio-5388-exec-10] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/planes desde 0:0:0:0:0:0:0:1
+2026-04-16 15:24:06,277 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: [{"idUsuario":1,"nombre":"Lucas","apellido":"RANOCCHIA","razonSocial":null,"cuit":"321551","email":"oxigeno@gmail.com","direccion":null,"tel":null,"password":"1234","estado":1,"roles":[{"idRol":1,"nombre":"ADMIN"}],"planes":[]}]
+2026-04-16 15:24:06,640 INFO  [http-nio-5388-exec-10] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: []
+2026-04-16 15:29:10,891 INFO  [http-nio-5388-exec-3] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/planes desde 0:0:0:0:0:0:0:1
+2026-04-16 15:29:10,896 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 15:29:10,928 INFO  [http-nio-5388-exec-4] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/auth/me desde 0:0:0:0:0:0:0:1
+2026-04-16 15:29:11,235 INFO  [http-nio-5388-exec-3] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: []
+2026-04-16 15:29:11,416 INFO  [http-nio-5388-exec-7] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"idRutina":6,"nombre":"Rutina Fuerza Tren Superior","objetivo":"Mejorar fuerza y resistencia","nivel":"Intermedio","dias":"Lunes, MiÃ©rcoles y Viernes","observaciones":null,"fechaAsignacion":"2026-04-10","activa":true,"idUsuario":1,"ejercicios":[]}
+2026-04-16 15:29:11,483 INFO  [http-nio-5388-exec-4] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"id":1,"email":"oxigeno@gmail.com","estado":1,"roles":["ADMIN"],"nombre":"Lucas","apellido":"RANOCCHIA","telefono":null,"planes":[]}
+2026-04-16 15:29:13,724 INFO  [http-nio-5388-exec-8] com.oxigeno.portal.filter.LoggingFilter : ➡️ GET /api/rutinas/mia desde 0:0:0:0:0:0:0:1
+2026-04-16 15:29:14,241 INFO  [http-nio-5388-exec-8] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"idRutina":6,"nombre":"Rutina Fuerza Tren Superior","objetivo":"Mejorar fuerza y resistencia","nivel":"Intermedio","dias":"Lunes, MiÃ©rcoles y Viernes","observaciones":null,"fechaAsignacion":"2026-04-10","activa":true,"idUsuario":1,"ejercicios":[]}
+2026-04-16 15:29:20,199 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 15:29:20,751 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"oxigeno@gmail.com","password":"1234"}
+2026-04-16 15:29:20,751 INFO  [http-nio-5388-exec-6] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJveGlnZW5vQGdtYWlsLmNvbSIsInVzZXJJZCI6MSwiaWF0IjoxNzc2MzY0MTYwLCJleHAiOjE3NzY0NTA1NjB9.IZq8CMw-xrfLrswB-mTb7QW2y5yJ_rauFdTebEEiFkw","user":{"id":1,"email":"oxigeno@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 15:30:59,318 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 15:30:59,833 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"oxigeno@gmail.com","password":"1234"}
+2026-04-16 15:30:59,833 INFO  [http-nio-5388-exec-1] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJveGlnZW5vQGdtYWlsLmNvbSIsInVzZXJJZCI6MSwiaWF0IjoxNzc2MzY0MjU5LCJleHAiOjE3NzY0NTA2NTl9.Ev-5O4NzsC7dIAjDhYcSNeoeyHQaXZ9Zmsu61Qm0o-Q","user":{"id":1,"email":"oxigeno@gmail.com","estado":1,"roles":["ADMIN"]}}
+2026-04-16 15:31:07,343 INFO  [http-nio-5388-exec-5] com.oxigeno.portal.filter.LoggingFilter : ➡️ POST /api/auth/login desde 0:0:0:0:0:0:0:1
+2026-04-16 15:31:07,864 INFO  [http-nio-5388-exec-5] com.oxigeno.portal.filter.LoggingFilter : 📥 Request Body: {"email":"oxigeno@gmail.com","password":"1234"}
+2026-04-16 15:31:07,864 INFO  [http-nio-5388-exec-5] com.oxigeno.portal.filter.LoggingFilter : 📤 Response 200 Body: {"token":"eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJveGlnZW5vQGdtYWlsLmNvbSIsInVzZXJJZCI6MSwiaWF0IjoxNzc2MzY0MjY3LCJleHAiOjE3NzY0NTA2Njd9.oEafnAtIYKbRLl5XCnLhb8MqUY7E35ccFSp-hcHbFO8","user":{"id":1,"email":"oxigeno@gmail.com","estado":1,"roles":["ADMIN"]}}
