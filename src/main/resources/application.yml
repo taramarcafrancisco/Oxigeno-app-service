@@ -38,12 +38,8 @@ spring:
 
 jwt:
   secret: ${JWT_SECRET:test123456789}
-<<<<<<< HEAD
   expiration-ms: ${JWT_EXPIRATION_MS:86400000}
 
 app:
   cors:
     allowed-origin-patterns: ${APP_CORS_ALLOWED_ORIGIN_PATTERNS:http://localhost:5173,https://oxigeno-app-theta.vercel.app,https://*.vercel.app}
-=======
-  expiration-ms: ${JWT_EXPIRATION_MS:86400000}
->>>>>>> b7f8d9a (Fix CORS credentials)
